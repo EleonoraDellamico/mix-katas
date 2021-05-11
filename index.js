@@ -429,3 +429,22 @@ const max = movements.reduce((acc, mov) => {
 	else return mov;
 }, movements[0]);
 console.log(max);
+
+
+const euroToUsd = 1.1;
+const totalDepositUSD = movements
+	.filter((mov) => mov > 0)
+	.map((mov, i, arr) => {
+		console.log(arr);
+		return mov * euroToUsd;
+	})
+	.reduce((acc, mov) => acc + mov, 0);
+console.log(totalDepositUSD);
+
+//FIND IT'S ANOTHER METHOD THAT LOOPS OVER THE ARRAY NOT return a new arry as filter but ONLY the return the ONLY FIRST ELEMENT that it finds in the array.
+const firstWithdrawal = movements.find((mov) => mov < 0);
+console.log(movements);
+console.log(firstWithdrawal);
+
+const account = accounts.find((acc) => acc.owner === 'Jessica Davis');
+console.log(account);
