@@ -423,13 +423,11 @@ let balance2 = 0;
 for (const mov of movements) balance2 += mov;
 console.log(balance2);
 
-
 const max = movements.reduce((acc, mov) => {
 	if (acc > mov) return acc;
 	else return mov;
 }, movements[0]);
 console.log(max);
-
 
 const euroToUsd = 1.1;
 const totalDepositUSD = movements
@@ -448,3 +446,29 @@ console.log(firstWithdrawal);
 
 const account = accounts.find((acc) => acc.owner === 'Jessica Davis');
 console.log(account);
+
+//EQUALITY
+console.log(movements.includes(-130));
+
+// SOME CONDITION
+console.log(movements.some((mov) => mov === -130));
+const anyDeposit = movements.some((mov) => mov > 0);
+console.log(anyDeposit);
+
+//EVERY CONDITION
+console.log(movements.every((mov) => mov > 0));
+
+//SEPARATE CALLBACK
+
+const deposit = (mov) => mov > 0;
+console.log(movements.some(deposit));
+console.log(movements.every(deposit));
+console.log(movements.filter(deposit));
+
+//FLAT and FLATMAP
+const arrF = [ [ 1, 2, 3 ], [ 4, 5, 6 ], 7, 8 ];
+console.log(arrF.flat()); //only one level nested
+
+const arrDeep = [ [ [ 1, 2 ], 3 ], [ 4, [ 5, 6 ] ], 7, 8 ];
+console.log(arrDeep.flat()); //doesn't work
+console.log(arrDeep.flat(2)); //here ok
