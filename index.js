@@ -472,3 +472,28 @@ console.log(arrF.flat()); //only one level nested
 const arrDeep = [ [ [ 1, 2 ], 3 ], [ 4, [ 5, 6 ] ], 7, 8 ];
 console.log(arrDeep.flat()); //doesn't work
 console.log(arrDeep.flat(2)); //here ok
+
+
+//SORTING 
+//return < 0 A,B (keep order)
+//return  > 0 B,A (switch order)
+
+//ASCENDING
+movements.sort((a,b)=> a-b);
+console.log(movements);
+/* {
+	if(a > b)
+	return 1; 
+	if(a < b)
+	return -1;
+}); 
+console.log(movements);
+ *///DESCENDING
+movements.sort((a,b)=> b- a)
+/* {
+	if(a > b)
+	return -1; 
+	if(a < b)
+	return 1;
+});  */
+console.log(movements);
